@@ -1,4 +1,8 @@
 import arcade
-class Player():
+class Player(arcade.sprite):
     def __init__(self):
-        pass
+        self.sprite=None 
+        self.vida=1
+        self.velocidad=10 #Velocidad Constante
+        self.sprite.center_x=20
+
