@@ -6,3 +6,7 @@ class Player(arcade.sprite):
         self.velocidad=10 #Velocidad Constante
         self.sprite.center_x=20
 
+        #Movimiento
+        self.izquierda=False
+        self.derecha=False
+
