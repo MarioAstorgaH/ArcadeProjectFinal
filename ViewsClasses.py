@@ -1,5 +1,5 @@
 import arcade
-import Player
+import PlayerClass
 class MenuView(arcade.View):
     def __init__(self, window = None, background_color = None):
         super().__init__(window, background_color)
@@ -9,14 +9,14 @@ class MenuView(arcade.View):
         
     def on_key_press(self, symbol, modifiers):
         if symbol==arcade.key.A:
-            Player.izquierda=True
+            PlayerClass.izquierda=True
         elif symbol==arcade.key.D:
-            Player.derecha=True
+            PlayerClass.derecha=True
     def on_key_release(self, symbol, modifiers):
         if symbol==arcade.key.A:
-            Player.izquierda=False
+            PlayerClass.izquierda=False
         elif symbol==arcade.key.D:
-            Player.derecha=False
+            PlayerClass.derecha=False
     def on_draw(self):
         self.clear()
     def on_update(self):
