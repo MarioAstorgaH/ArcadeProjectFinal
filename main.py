@@ -1,11 +1,12 @@
 import arcade
 import PlayerClass
 import ViewsClasses
-Alto=960
-Ancho=720
-Titulo="Final Project"
+alto=960
+ancho=720
+title = "Final Project"
 def main():
-    Jugador=PlayerClass()
-    Window=arcade.Window()
-    ViewsClasses.MenuView.setup()
-    Window.show_view(ViewsClasses.MenuView())
+    jugador=PlayerClass.Player()
+    window=arcade.Window(alto,ancho,title)
+    gameView = ViewsClasses.GameView(jugador)
+    gameView.setup()
+    window.show_view(gameView)

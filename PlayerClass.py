@@ -1,5 +1,5 @@
 import arcade
-class Player(arcade.sprite):
+class Player(arcade.Sprite):
     def __init__(self):
         self.sprite=None 
         self.vida=1
@@ -9,4 +9,13 @@ class Player(arcade.sprite):
         #Movimiento
         self.izquierda=False
         self.derecha=False
+        self.arriba=False
+        self.abajo=False
+
+        #Disparo
+        self.disparo=False
+        self.disparoArriba=False
+        self.disparoAbajo=False
+        self.disparoDerecha=False
+        self.disparoIzquierda=False
 
