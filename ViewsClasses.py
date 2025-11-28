@@ -1,14 +1,32 @@
 import arcade
 import PlayerClass 
 import SpriteListClass
+alto=960
+ancho=720
+EscalaSprite=0.5
 class GameView(arcade.View):
-    def __init__(self,player:PlayerClass.Player,objeto1:SpriteListClass.Objetos, window, background_color):
+    def __init__(self,player:PlayerClass.Player, window, background_color):
         super().__init__(window, background_color)
         self.player:PlayerClass.Player=player
-        self.objeto1:SpriteListClass.Objetos=objeto1
+
 
     def setup(self):
-        arcade.set_background_color(arcade.color.BLUE)
+        self.background_color=arcade.color.AMAZON
+        self.lista_ladrillos=arcade.SpriteList()
+        self.lista_dineros=arcade.SpriteList()
+        for x in range(32,ancho,64):
+            for y in (32, alto-32):
+                wall=arcade.Sprite(":resources:images/tiles/brickBrown.png",scale=EscalaSprite)
+                wall.center_x=x
+                wall.center_y=y
+                self.lista_ladrillos.append(wall)
+
+        for y in range(96,alto,64):
+            for x in (32,ancho-32):
+                wall=arcade.Sprite(":resources:images/tiles/brickBrown.png",scale=EscalaSprite)
+                wall.center_x=x
+                wall.center_y=y
+                self.lista_ladrillos.append(wall)
         
     def on_key_press(self, symbol, modifiers):
         if symbol==arcade.key.A:
@@ -32,6 +50,6 @@ class GameView(arcade.View):
 
     def on_draw(self):
         self.clear()
-
+        self.player.sprite
     def on_update(self):
         pass
